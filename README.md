@@ -1,78 +1,73 @@
-# Bike-Sharing
-This End-to-End Bike Sharing Project is developed using Azure Databricks, Azure Data Lake Storage Gen2 (ADLS Gen2), and Delta Lake. The project demonstrates a modern data engineering pipeline for a bike sharing system using the Lakehouse architecture.
- Project Requirements
-Data Ingestion
-Ingest raw bike sharing data into a data lake.
+# End-to-End Bike Sharing Project
 
-Apply appropriate schemas to the ingested data.
+This End-to-End Bike Sharing Project is developed using **Azure Databricks**, **Azure Data Lake Storage Gen2 (ADLS Gen2)**, and **Delta Lake**. The project demonstrates a modern data engineering pipeline for a bike sharing system using the Lakehouse architecture.
 
-Enable SQL-based querying and analysis on the raw data.
+## Project Requirements
 
-Data Transformation
-Normalize the raw data and build a structured data model.
+### Data Ingestion
 
-Prepare data for analytical queries through cleaning, deduplication, and validation.
+* Ingest raw bike sharing data into a data lake.
+* Apply appropriate schemas to the ingested data.
+* Enable SQL-based querying and analysis on the raw data.
 
-Enable SQL-based analysis on the transformed data.
+### Data Transformation
 
-Analysis
-Use Spark SQL queries on the transformed data to extract insights and trends related to bike usage, peak hours, and user behavior.
+* Normalize the raw data and build a structured data model.
+* Prepare data for analytical queries through cleaning, deduplication, and validation.
+* Enable SQL-based analysis on the transformed data.
 
-Business Intelligence
-Build an interactive Power BI dashboard to track and visualize key performance indicators (KPIs) of the bike sharing system.
+### Analysis
 
-Tools and Technologies Used
-Azure Databricks: For distributed data processing using Apache Spark and Delta Lake.
+* Use Spark SQL queries on the transformed data to extract insights and trends related to bike usage, peak hours, and user behavior.
 
-Azure Data Lake Storage Gen2: For scalable, secure data storage.
+## Tools and Technologies Used
 
-Delta Lake: For reliable, ACID-compliant data lakes with support for schema enforcement and time travel.
+* **Azure Databricks:** For distributed data processing using Apache Spark and Delta Lake.
+* **Azure Data Lake Storage Gen2:** For scalable, secure data storage.
+* **Delta Lake:** For reliable, ACID-compliant data lakes with support for schema enforcement and time travel.
+* **PySpark & Spark SQL:** For data processing, transformation, and analytics.
+* **Power BI:** For dashboard creation and visualization of KPIs.
+* **VSCode:** For code editing and notebook development.
+* **Lucidchart:** For designing the solution architecture.
 
-PySpark & Spark SQL: For data processing, transformation, and analytics.
+---
 
-Power BI: For dashboard creation and visualization of KPIs.
+## Solution Architecture
 
-VSCode: For code editing and notebook development.
+The project is built on the **Azure Databricks Modern Analytics Architecture**, following a **three-layer data refinement pipeline**:
 
-Lucidchart: For designing the solution architecture.
+### Bronze Layer
 
-Solution Architecture
-The project is built on the Azure Databricks Modern Analytics Architecture, following a three-layer data refinement pipeline:
+* Raw, unprocessed data landing zone.
+* Stores original data as ingested without transformation.
 
-Bronze Layer
-Raw, unprocessed data landing zone.
+### Silver Layer
 
-Stores original data as ingested without transformation.
+* Cleaned and normalized data.
+* Data is deduplicated, filtered, standardized, and enriched.
+* Schema validation and quality checks ensure reliability.
 
-Silver Layer
-Cleaned and normalized data.
+### Gold Layer
 
-Data is deduplicated, filtered, standardized, and enriched.
+* Fully curated, clean, and aggregated data.
+* Optimized for efficient querying and analytical workloads.
+* Supports business intelligence and reporting.
 
-Schema validation and quality checks ensure reliability.
+---
 
-Gold Layer
-Fully curated, clean, and aggregated data.
+## Analysis Using Spark SQL
 
-Optimized for efficient querying and analytical workloads.
+* SQL queries are written and executed at each layer of the pipeline to validate data quality and extract actionable insights.
+* The `analysis/` folder contains all Spark SQL scripts used for transforming and analyzing the data.
 
-Supports business intelligence and reporting.
+---
 
-Analysis Using Spark SQL
-SQL queries are written and executed at each layer of the pipeline to validate data quality and extract actionable insights.
+## Project Outcome
 
-The analysis/ folder contains all Spark SQL scripts used for transforming and analyzing the data.
+The final output of this project is a **Power BI dashboard** that visualizes KPIs such as:
 
-Project Outcome
-The final output of this project is a Power BI dashboard that visualizes KPIs such as:
-
-Total rides per hour/day/month
-
-Peak usage times
-
-User demographics and ride patterns
-
-Bike availability and utilization metrics
-
-This dashboard provides actionable insights for stakeholders to optimize bike sharing operations and planning.
-
+* Total rides per hour/day/month
+* Peak usage times
+* User demographics and ride patterns
+* Bike availability and utilization metrics
+ 
